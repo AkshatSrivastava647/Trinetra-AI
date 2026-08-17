@@ -21,6 +21,13 @@ def scan_file(filepath: str) -> list[dict]:
 
 
 if __name__ == "__main__":
-    results = scan_file("sandbox_app/app.py")
+    import os
+
+    # Walk up from this file's location to the repo root,
+    # so this works no matter which folder you run it from.
+    repo_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    target = os.path.join(repo_root, "sandbox_app", "app.py")
+
+    results = scan_file(target)
     for r in results:
         print(f"[VULNERABLE] Line {r['line_number']}: {r['line_text']}")
