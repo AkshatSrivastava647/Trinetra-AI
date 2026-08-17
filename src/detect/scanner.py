@@ -25,7 +25,7 @@ if __name__ == "__main__":
 
     # Walk up from this file's location to the repo root,
     # so this works no matter which folder you run it from.
-    repo_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+   repo_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
     target = os.path.join(repo_root, "sandbox_app", "app.py")
 
     results = scan_file(target)
